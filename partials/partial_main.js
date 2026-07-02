@@ -115,7 +115,7 @@
         <button class="mobile-toggle" type="button" aria-label="Menu">&#9776;</button>
         <ul class="nav-links">
           ${backLink}
-          <li><a href="${root}/index.html#products">Products</a></li>
+          <li><a href="${root}/index.html#products">Frames & Tools</a></li>
           <li><a href="${root}/index.html#services">Services</a></li>
           <li><a href="${root}/index.html#about">About</a></li>
           <li><a href="${root}/index.html#gallery">Gallery</a></li>

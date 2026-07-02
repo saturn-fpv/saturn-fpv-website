@@ -33,16 +33,23 @@ The following directories in the website root must remain 100% identical to thei
 
 ## How It Works
 
-### 1. Standalone vs. Frame Detection
+### 1. Standalone vs. Frame Detection & Sidebar Injection
 Every tool loads `../partials/partial_tools.js` at the bottom of its `<body>`.
-- **Standalone Mode (Direct Website Access)**: `partial_tools.js` injects the main website header and footer, and overrides the tool's CSS to display the detailed help block (`.info`) at the bottom of the page.
-- **Iframe Wrapper Mode (Loaded inside App/Dashboard iframe)**: `partial_tools.js` detects the parent frame (`window.parent !== window`) and bails out, loading only the tool's core UI. The parent wrapper (`index.html`) handles the header, sidebar, and slide-down help panels.
+- **Iframe Wrapper Mode (Loaded inside App/Dashboard iframe)**: `partial_tools.js` detects the parent frame (`window.parent !== window`) and bails out immediately, leaving navigation entirely to the App wrapper's native shell.
+- **Standalone Mode (Direct Website Access)**: `partial_tools.js` injects the website's header (unified styling) and footer, displays the static help documentation box (`.sfpv-help-box`) at the bottom of the page, and dynamically loads the synced `js/tools-list.js` and `js/sidebar.js` files to construct and mount the slide-out tools sidebar drawer.
+- **Synchronous Layout Injections**: To prevent layout shifting and jumping on page reloads (buildup stutter), `partial_tools.js` runs synchronously when parsed. It applies default `body { padding-top: 86px !important; }` and adds the `.has-persistent-sidebar` offset class immediately to ensure the initial paint matches the final layout.
 
-### 2. Dynamic Help Text Harvesting
+### 2. Shared Sidebar Component & Metadata
+* **Tools Configuration (`js/tools-list.js`)**: Serves as the single source of truth for tool keys, names, icons, paths, and display sequence.
+* **Component script (`js/sidebar.js`)**: Dynamically compiles the HTML list, injects styling variables (including `.light-theme` overrides for the drawer), and intercepts theme toggle slider triggers. On the Website, it navigates via direct window redirection to sibling paths.
+* **Mobile Viewport Overflow Prevention**: To avoid page zoom/scaling issues on mobile, the sidebar drawer must apply `visibility: hidden;` when closed. This ensures off-screen elements do not expand the scrollable boundary.
+* **Theme Persistence & Local File Restrictions**: Theme selections are stored under the `'fpv-tools-theme'` local storage key. Note that browsers isolate `localStorage` spaces per file when pages are opened locally using `file://` URLs. Setting synchronization across tools will function natively inside the App and on the live Website (HTTP/HTTPS), but will not sync across pages when opened directly from files.
+
+### 3. Dynamic Help Text Harvesting
 In iframe mode, the tool automatically sends its help section's HTML up to the parent wrapper via a `postMessage` event. The parent wrapper then dynamically populates its sliding help drawer, eliminating duplicate text storage.
 
-### 3. Shared Offline Libraries
-All tools link to shared scripts inside `/js/` and styles inside `/css/` (copied from the app). This ensures identical file contents and maximizes website load performance (multiplexed same-origin loads, no DNS roundtrips to external CDNs).
+### 4. Shared Offline Libraries
+All tools link to shared scripts inside `/js/` and styles inside `/css/` (copied from the app). This ensures identical file contents and maximizes website load performance.
 
 ---
 
