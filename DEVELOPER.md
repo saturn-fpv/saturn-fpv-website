@@ -51,6 +51,13 @@ In iframe mode, the tool automatically sends its help section's HTML up to the p
 ### 4. Shared Offline Libraries
 All tools link to shared scripts inside `/js/` and styles inside `/css/` (copied from the app). This ensures identical file contents and maximizes website load performance.
 
+### 5. Favicon Optimization & Link Paths
+* **High-Resolution Logo**: Located at `image/logo/saturn_fpv_logo_white_small.jpg` (500x500 px), used for website brand headers, footers, and mobile bookmarks.
+* **Optimized Favicon**: A lightweight 32x32 PNG file located at `image/logo/favicon-32.png`. It is used for standard browser tab icons.
+* **HTML Integration**:
+  - The root HTML files (`index.html`, `tools.html`, etc.) must link it as `<link rel="icon" type="image/png" href="image/logo/favicon-32.png">`.
+  - The tool HTML files inside `tools/` (synchronized from FPV Tools) link it as `<link rel="icon" type="image/png" href="../image/logo/favicon-32.png">`.
+
 ---
 
 ## Synchronization Workflow
