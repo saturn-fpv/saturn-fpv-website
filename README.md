@@ -1,3 +1,6 @@
+[![License: GPL v3](https://img.shields.io/badge/License-GPL_v3-blue.svg)](LICENSE)
+[![Support on Patreon](https://img.shields.io/badge/Patreon-Sponsor-orange?logo=patreon&logoColor=white)](https://www.patreon.com/SaturnFPV)
+
 # Saturn FPV Website
 
 Source code for the official [Saturn FPV](https://saturnfpv.com) website, featuring open source frames and interactive web tools for FPV pilots.
