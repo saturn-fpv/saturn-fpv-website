@@ -2,4 +2,3 @@ Thumbs.db
 *.drx
 .agents/
 temp/
-deploy.ps1

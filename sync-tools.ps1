@@ -4,16 +4,11 @@
 $ErrorActionPreference = "Stop"
 
 # Define the path to the FPV Tools repository root
-# Since both repositories are typically cloned into the same parent folder, we default to the relative path.
-$AppRepoDir = Join-Path $PSScriptRoot "../FPV Tools"
+# Assumes both repositories are cloned into the same parent folder (or override with $env:FPV_TOOLS_DIR)
+$AppRepoDir = if ($env:FPV_TOOLS_DIR) { $env:FPV_TOOLS_DIR } else { Join-Path $PSScriptRoot "../FPV Tools" }
 
 if (-not (Test-Path $AppRepoDir)) {
-    # Fallback to absolute path
-    $AppRepoDir = "D:\Temp\Antigravity\FPV Tools"
-}
-
-if (-not (Test-Path $AppRepoDir)) {
-    Write-Error "Could not find FPV Tools App repository at '$AppRepoDir'. Please edit this script to set the correct path."
+    Write-Error "Could not find FPV Tools repository at '$AppRepoDir'. Ensure 'FPV Tools' is cloned alongside this repository or set `$env:FPV_TOOLS_DIR."
 }
 
 Write-Host "Syncing from: $AppRepoDir" -ForegroundColor Cyan
