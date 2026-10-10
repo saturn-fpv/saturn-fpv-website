@@ -1,6 +1,6 @@
 # Saturn FPV Website
 
-Source code for the official [Saturn FPV](https://saturnfpv.com) website, featuring interactive web tools for FPV pilots.
+Source code for the official [Saturn FPV](https://saturnfpv.com) website, featuring open source frames and interactive web tools for FPV pilots.
 
 ---
 
