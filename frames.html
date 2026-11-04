@@ -12,6 +12,11 @@
 </head>
 <body>
 
+<!-- Shared icons for the frame tiles -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+</svg>
+
 <!-- PAGE HEADER -->
 <div class="page-header">
     <div class="hero-bg"></div>
@@ -27,8 +32,9 @@
 
 <!-- FRAMES GRID -->
 <section>
+    <!-- When a frame goes on sale, replace its frame-soon span with the frame-link-buy link from the Mars 2 tile and swap the URL and aria-label. -->
     <div class="products-grid">
-        <div class="product-card reveal">
+        <div class="product-card frame-card reveal">
 			<a href="https://github.com/saturn-fpv/Nova-5">
 				<div class="product-image"><img src="image/frames/frame_blend_v02b_small.jpg" alt="5 inch drone frame"></div>
 				<div class="product-info">
@@ -37,8 +43,15 @@
 					<p>Durable 5 inch freestyle fpv drone frame with low vibration resonance</p>
 				</div>
 			</a>
+            <div class="frame-links">
+                <a class="frame-link" href="https://github.com/saturn-fpv/Nova-5" target="_blank" rel="noopener" aria-label="Nova 5: View on GitHub">
+                    <svg aria-hidden="true"><use href="#icon-github"></use></svg>
+                    <span>View on GitHub</span>
+                </a>
+                <span class="frame-soon" aria-hidden="true"></span>
+            </div>
         </div>
-        <div class="product-card reveal">
+        <div class="product-card frame-card reveal">
 			<a href="https://github.com/saturn-fpv/Mars-2">
 				<div class="product-image"><img src="image/frames/Mars-2-flywoo.jpg" alt="2 inch drone frame"></div>
 				<div class="product-info">
@@ -47,8 +60,18 @@
 					<p>Compact 2 inch unibody frame made for speed and stability.</p>
 				</div>
 			</a>
+            <div class="frame-links">
+                <a class="frame-link" href="https://github.com/saturn-fpv/Mars-2" target="_blank" rel="noopener" aria-label="Mars 2: View on GitHub">
+                    <svg aria-hidden="true"><use href="#icon-github"></use></svg>
+                    <span>View on GitHub</span>
+                </a>
+                <a class="frame-link frame-link-buy" href="https://cncdrones.com/mars-2-inch.html" target="_blank" rel="noopener" aria-label="Mars 2: Buy at CNCDrones">
+                    <img src="image/logo/CNCmadnesLogoFinal_cr.webp" alt="" width="68" height="36">
+                    <span>Buy frame</span>
+                </a>
+            </div>
         </div>
-        <div class="product-card reveal">
+        <div class="product-card frame-card reveal">
 			<a href="https://github.com/saturn-fpv/Mars-3">
 				<div class="product-image"><img src="image/frames/Mars-3.jpg" alt="3 inch drone frame"></div>
 				<div class="product-info">
@@ -57,8 +80,15 @@
 					<p>Lightweight 3 inch unibody frame designed for agility and smooth park cruising.</p>
 				</div>
 			</a>
+            <div class="frame-links">
+                <a class="frame-link" href="https://github.com/saturn-fpv/Mars-3" target="_blank" rel="noopener" aria-label="Mars 3: View on GitHub">
+                    <svg aria-hidden="true"><use href="#icon-github"></use></svg>
+                    <span>View on GitHub</span>
+                </a>
+                <span class="frame-soon" aria-hidden="true"></span>
+            </div>
         </div>
-        <div class="product-card reveal">
+        <div class="product-card frame-card reveal">
 			<a href="https://github.com/saturn-fpv/Mars-4">
 				<div class="product-image"><img src="image/frames/Mars-4.jpg" alt="4 inch drone frame"></div>
 				<div class="product-info">
@@ -67,8 +97,15 @@
 					<p>Hyper-efficient 4 inch unibody frame engineered for quiet, long-endurance cruising.</p>
 				</div>
 			</a>
+            <div class="frame-links">
+                <a class="frame-link" href="https://github.com/saturn-fpv/Mars-4" target="_blank" rel="noopener" aria-label="Mars 4: View on GitHub">
+                    <svg aria-hidden="true"><use href="#icon-github"></use></svg>
+                    <span>View on GitHub</span>
+                </a>
+                <span class="frame-soon" aria-hidden="true"></span>
+            </div>
         </div>
-        <div class="product-card reveal">
+        <div class="product-card frame-card reveal">
 			<a href="https://github.com/saturn-fpv/Pluto-3">
 				<div class="product-image"><img src="image/frames/pluto-120_dark.jpg" alt="3 inch drone frame"></div>
 				<div class="product-info">
@@ -77,6 +114,13 @@
 					<p>Extended-range platform for long-distance flights or super silent park cruises.</p>
 				</div>
 			</a>
+            <div class="frame-links">
+                <a class="frame-link" href="https://github.com/saturn-fpv/Pluto-3" target="_blank" rel="noopener" aria-label="Pluto 3: View on GitHub">
+                    <svg aria-hidden="true"><use href="#icon-github"></use></svg>
+                    <span>View on GitHub</span>
+                </a>
+                <span class="frame-soon" aria-hidden="true"></span>
+            </div>
         </div>
     </div>
 </section>
