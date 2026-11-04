@@ -9,7 +9,7 @@ Source code for the official [Saturn FPV](https://saturnfpv.com) website, featur
 
 ## Interactive FPV Tools
 
-The interactive calculators and utilities hosted on this site (Rate Converter, TPA Comparison, Sensor Calibration, Stator Volume, PID Simulator, Prop Tip Speed, Frequency Planner, Telemetry Parser, and RF Calculators) are maintained upstream in the **[FPV Tools](https://github.com/saturn-fpv/fpv-tools)** repository.
+The interactive calculators and utilities hosted on this site (Rate Converter, TPA Comparison, Sensor Calibration, Stator Volume, PID Simulator, Prop Tip Speed, Frequency Planner, Telemetry Parser, RF Calculators, and Chirp Analyzer) are maintained upstream in the **[FPV Tools](https://github.com/saturn-fpv/fpv-tools)** repository.
 
 * **Upstream Repository:** [saturn-fpv/fpv-tools](https://github.com/saturn-fpv/fpv-tools) (also available on Google Play)
 * **Contributions & Bug Reports:** All tool-related improvements, bug reports, and pull requests should be submitted directly to the [FPV Tools repository](https://github.com/saturn-fpv/fpv-tools).

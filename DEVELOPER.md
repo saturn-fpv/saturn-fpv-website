@@ -18,7 +18,9 @@ The following directories in the website root must remain 100% identical to thei
 │   ├── pid-simulator.html
 │   ├── prop-tip-speed.html
 │   ├── frequency-planner.html
-│   └── telemetry-parser.html
+│   ├── telemetry-parser.html
+│   ├── rf-calculators.html
+│   └── chirp-analyzer.html
 ├── js/                            <-- Shared offline-first JS libraries
 │   ├── chart.umd.min.js
 │   ├── leaflet.js
