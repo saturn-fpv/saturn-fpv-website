@@ -41,4 +41,16 @@ if (Test-Path $DstCss) {
 }
 Copy-Item -Recurse -Force $SrcCss -Destination $PSScriptRoot
 
+# 4. Sync fonts folder
+# css/fonts.css references ../fonts/*.ttf with relative paths. Without this the
+# website 404s on every face and silently falls back to the Google Fonts CDN,
+# which breaks the offline-first / no-CDN rule the tools are built around.
+$SrcFonts = Join-Path $AppRepoDir "fonts"
+$DstFonts = Join-Path $PSScriptRoot "fonts"
+Write-Host "Syncing fonts folder..." -ForegroundColor Yellow
+if (Test-Path $DstFonts) {
+    Remove-Item -Recurse -Force $DstFonts
+}
+Copy-Item -Recurse -Force $SrcFonts -Destination $PSScriptRoot
+
 Write-Host "Synchronization completed successfully!" -ForegroundColor Green
