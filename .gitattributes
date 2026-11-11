@@ -1,0 +1,49 @@
+# Line endings.
+#
+# Without this file, normalisation depends on each clone's local core.autocrlf,
+# which is a machine setting and is not cloned. A contributor whose git is set
+# differently can commit CRLF and produce a diff that touches every line of a
+# file for no reason. These rules live in the repository, so they apply to
+# everyone: Linux, macOS, Windows and CI alike.
+#
+# This matters more here than in most repos: sync-tools.ps1 copies raw bytes
+# from the FPV Tools working tree, so whatever endings are on disk at that
+# moment land in this repository. Pinning the stored form keeps those syncs
+# from showing up as whole-file diffs.
+#
+# text=auto  -> git decides whether a file is text, and always stores LF.
+#               The working tree still follows core.autocrlf, so Windows
+#               checkouts keep getting CRLF on disk as before.
+* text=auto
+
+# Scripts whose interpreter cares about the ending, regardless of platform.
+*.ps1    text eol=crlf
+*.bat    text eol=crlf
+*.cmd    text eol=crlf
+*.sh     text eol=lf
+
+# Web files are served and diffed as LF everywhere.
+*.html   text eol=lf
+*.js     text eol=lf
+*.css    text eol=lf
+*.md     text eol=lf
+*.json   text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+*.txt    text eol=lf
+
+# CNAME is read by GitHub Pages and has no extension.
+CNAME    text eol=lf
+
+# Binaries: never touch these. A single byte changed by newline conversion
+# corrupts a font or an image.
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.webp   binary
+*.gif    binary
+*.ico    binary
+*.ttf    binary
+*.otf    binary
+*.woff   binary
+*.woff2  binary
